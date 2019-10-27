@@ -188,9 +188,9 @@ Connection ~ 2000 6050
 Wire Wire Line
 	2250 6150 2650 6150
 Connection ~ 2250 6150
-Text Label 2650 6050 2    50   ~ 0
-SEL0
 Text Label 2650 6150 2    50   ~ 0
+SEL0
+Text Label 2650 6050 2    50   ~ 0
 SEL1
 Text Label 6450 6750 2    50   ~ 0
 SEL1
@@ -510,56 +510,6 @@ Wire Wire Line
 Wire Wire Line
 	2000 2400 2000 2300
 NoConn ~ 2350 2800
-$Comp
-L Device:Crystal_Small Y1
-U 1 1 5DBEA05E
-P 2250 3400
-F 0 "Y1" V 2250 3500 50  0000 L CNN
-F 1 "12MHz" V 2250 3100 50  0000 L CNN
-F 2 "Crystal:Crystal_SMD_HC49-SD_HandSoldering" H 2250 3400 50  0001 C CNN
-F 3 "~" H 2250 3400 50  0001 C CNN
-	1    2250 3400
-	0    1    1    0   
-$EndComp
-$Comp
-L Device:C_Small C1
-U 1 1 5DBEB8F9
-P 2050 3300
-F 0 "C1" V 2000 3200 50  0000 C CNN
-F 1 "22pF" V 2000 3450 50  0000 C CNN
-F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 2050 3300 50  0001 C CNN
-F 3 "~" H 2050 3300 50  0001 C CNN
-	1    2050 3300
-	0    1    1    0   
-$EndComp
-$Comp
-L Device:C_Small C2
-U 1 1 5DBEC0B5
-P 2050 3500
-F 0 "C2" V 2100 3400 50  0000 C CNN
-F 1 "22pF" V 2100 3650 50  0000 C CNN
-F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 2050 3500 50  0001 C CNN
-F 3 "~" H 2050 3500 50  0001 C CNN
-	1    2050 3500
-	0    1    1    0   
-$EndComp
-Wire Wire Line
-	2350 3300 2250 3300
-Connection ~ 2250 3300
-Wire Wire Line
-	2250 3300 2150 3300
-Wire Wire Line
-	2150 3500 2250 3500
-Connection ~ 2250 3500
-Wire Wire Line
-	2250 3500 2350 3500
-Wire Wire Line
-	1950 3300 1950 3500
-Wire Wire Line
-	1950 3500 1950 3700
-Wire Wire Line
-	1950 3700 2750 3700
-Connection ~ 1950 3500
 Connection ~ 2750 3700
 Wire Wire Line
 	1450 3000 1550 3000
@@ -589,7 +539,6 @@ Wire Wire Line
 Wire Wire Line
 	1450 3700 1900 3700
 Connection ~ 1450 3700
-Connection ~ 1950 3700
 NoConn ~ 1450 3300
 NoConn ~ 1450 2700
 $Comp
@@ -624,7 +573,7 @@ U 1 1 5DC0C777
 P 1650 3400
 F 0 "R2" V 1600 3250 50  0000 C CNN
 F 1 "5.1k" V 1600 3550 50  0000 C CNN
-F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 1650 3400 50  0001 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 1650 3400 50  0001 C CNN
 F 3 "~" H 1650 3400 50  0001 C CNN
 	1    1650 3400
 	0    1    1    0   
@@ -635,7 +584,7 @@ U 1 1 5DC0D640
 P 1650 2800
 F 0 "R1" V 1600 2650 50  0000 C CNN
 F 1 "5.1k" V 1600 2950 50  0000 C CNN
-F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 1650 2800 50  0001 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 1650 2800 50  0001 C CNN
 F 3 "~" H 1650 2800 50  0001 C CNN
 	1    1650 2800
 	0    1    1    0   
@@ -649,8 +598,6 @@ Wire Wire Line
 Wire Wire Line
 	1900 3400 1900 3700
 Connection ~ 1900 3700
-Wire Wire Line
-	1900 3700 1950 3700
 Wire Wire Line
 	1750 2800 1900 2800
 Wire Wire Line
@@ -979,7 +926,7 @@ U 1 1 5DDE6682
 P 9600 2900
 F 0 "U7" H 9200 3600 50  0000 C CNN
 F 1 "ESP-WROOM-02" H 9450 3500 50  0000 C CNN
-F 2 "RF_Module:ESP-WROOM-02" H 10200 2350 50  0001 C CNN
+F 2 "ESP8266:ESP-13-WROOM-02" H 10200 2350 50  0001 C CNN
 F 3 "https://www.espressif.com/sites/default/files/documentation/0c-esp-wroom-02_datasheet_en.pdf" H 9650 4400 50  0001 C CNN
 	1    9600 2900
 	1    0    0    -1  
@@ -1163,4 +1110,28 @@ NoConn ~ 9100 2800
 NoConn ~ 10100 2800
 Wire Wire Line
 	8000 2700 8300 2700
+$Comp
+L Device:Crystal_GND2 Y1
+U 1 1 5DBAF890
+P 2200 3400
+F 0 "Y1" V 2050 3200 50  0000 L CNN
+F 1 "12MHz" V 2400 3250 50  0000 L CNN
+F 2 "Crystal:Resonator_SMD_muRata_CSTxExxV-3Pin_3.0x1.1mm_HandSoldering" H 2200 3400 50  0001 C CNN
+F 3 "~" H 2200 3400 50  0001 C CNN
+	1    2200 3400
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	1900 3700 2750 3700
+Wire Wire Line
+	2350 3300 2350 3250
+Wire Wire Line
+	2350 3250 2200 3250
+Wire Wire Line
+	2350 3500 2350 3550
+Wire Wire Line
+	2350 3550 2200 3550
+Wire Wire Line
+	2000 3400 1900 3400
+Connection ~ 1900 3400
 $EndSCHEMATC
