@@ -1,0 +1,36 @@
+### Module positions - created on 2019 October 28, Monday 13:53:23 ###
+### Printed by Pcbnew version kicad (5.1.4-0-10_14)
+## Unit = mm, Angle = deg.
+## Side : top
+# Ref     Val                 Package                                                          PosX       PosY       Rot  Side
+C3        100nF               C_0603_1608Metric_Pad1.05x0.95mm_HandSolder                  173.5950  -112.6490    0.0000  top
+C4        100nF               C_0603_1608Metric_Pad1.05x0.95mm_HandSolder                  200.6600  -113.1430  270.0000  top
+C5        10uF                CP_EIA-3528-21_Kemet-B_Pad1.50x2.35mm_HandSolder             173.6090  -101.3200  270.0000  top
+C6        10uF                CP_EIA-3528-21_Kemet-B_Pad1.50x2.35mm_HandSolder             170.1800  -101.3200  270.0000  top
+C7        100nF               C_0603_1608Metric_Pad1.05x0.95mm_HandSolder                  172.9880   -88.3920    0.0000  top
+D1        LED                 LED_1206_3216Metric_Pad1.42x1.75mm_HandSolder                163.0680   -94.9595  270.0000  top
+F1        MF-MSMF050          Fuse_1812_4532Metric_Pad1.30x3.40mm_HandSolder               171.7040  -106.0450  180.0000  top
+R1        5.1k                R_0603_1608Metric_Pad1.05x0.95mm_HandSolder                  173.5950  -109.3978  180.0000  top
+R2        5.1k                R_0603_1608Metric_Pad1.05x0.95mm_HandSolder                  173.5976  -111.0234  180.0000  top
+R3        10k                 R_0603_1608Metric_Pad1.05x0.95mm_HandSolder                  197.4710   -96.3930    0.0000  top
+R4        10k                 R_0603_1608Metric_Pad1.05x0.95mm_HandSolder                  197.4964   -97.9170    0.0000  top
+R5        1k                  R_0805_2012Metric_Pad1.15x1.40mm_HandSolder                  195.8712   -83.0208  225.0000  top
+R6        0                   R_0603_1608Metric_Pad1.05x0.95mm_HandSolder                  204.8510  -105.6500  270.0000  top
+R7        10k                 R_0603_1608Metric_Pad1.05x0.95mm_HandSolder                  206.3750  -105.6500  270.0000  top
+R8        0                   R_0603_1608Metric_Pad1.05x0.95mm_HandSolder                  203.3270  -105.6386  270.0000  top
+R9        1k                  R_0805_2012Metric_Pad1.15x1.40mm_HandSolder                  165.3540   -95.4950   90.0000  top
+R10       10k                 R_0603_1608Metric_Pad1.05x0.95mm_HandSolder                  198.8820  -113.1570   90.0000  top
+R11       10k                 R_0603_1608Metric_Pad1.05x0.95mm_HandSolder                  199.6277  -120.4123   90.0000  top
+R12       10k                 R_0603_1608Metric_Pad1.05x0.95mm_HandSolder                  199.7570  -110.6170    0.0000  top
+SW1       SW_DIP_x02          SW_DIP_SPSTx02_Slide_Copal_CHS-02B_W7.62mm_P1.27mm           200.4060   -87.5030  135.0000  top
+SW2       SW_Push             SW_SPST_PTS810                                               204.9780  -110.7440   45.0000  top
+SW3       SW_Push             SW_SPST_PTS810                                               202.3110  -116.5860   45.0000  top
+U1        CH340G              SOIC-16_3.9x9.9mm_P1.27mm                                    168.6560  -115.4430  225.0000  top
+U2        CD4052B             SOIC-16_3.9x9.9mm_P1.27mm                                    203.3270   -97.9170  180.0000  top
+U3        E18-MS1-PCB         E18-MS1PA1-IPX                                               176.6570  -101.9810    0.0000  top
+U4        74LVC1G66           SOT-353_SC-70-5_Handsoldering                                196.7230  -100.3300    0.0000  top
+U5        74LVC1G66           SOT-353_SC-70-5_Handsoldering                                196.7230  -103.2510    0.0000  top
+U6        AP1117-33           SOT-223-3_TabPin2                                            171.1960   -94.1070   90.0000  top
+USB1      HRO-TYPE-C-31-M-12  HRO-TYPE-C-31-M-12-HandSoldering                             158.7500  -102.8700  270.0000  top
+Y1        12MHz               Resonator_SMD_muRata_CSTxExxV-3Pin_3.0x1.1mm_HandSoldering   163.4085  -110.5305   45.0000  top
+## End
