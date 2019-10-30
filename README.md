@@ -19,5 +19,6 @@ If your machine running smarthome platform, such as ioBroker or homeassistant, i
 
 # PCB preview
 
-[top view]()
-[bottom view]()
+![top view](https://github.com/smarthomefans/z2m_partner/blob/master/images/top_view.png)
+![bottom view](https://github.com/smarthomefans/z2m_partner/blob/master/images/bottom_view.png)
+
