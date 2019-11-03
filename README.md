@@ -22,3 +22,7 @@ If your machine running smarthome platform, such as ioBroker or homeassistant, i
 ![top view](https://github.com/smarthomefans/z2m_partner/blob/master/images/top_view.png)
 ![bottom view](https://github.com/smarthomefans/z2m_partner/blob/master/images/bottom_view.png)
 
+# Hardware module images
+
+![top view](https://github.com/smarthomefans/z2m_partner/blob/master/images/front_hw.png)
+![bottom view](https://github.com/smarthomefans/z2m_partner/blob/master/images/back_hw.png)
