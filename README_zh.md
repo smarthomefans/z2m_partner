@@ -16,7 +16,7 @@
 
 - 使用[E18-MS1PA1-IPX](http://www.ebyte.com/en/product-view-news.aspx?id=123) zigbee模组, 模组使用CC2592PA, 发射功率可以达到21dBm. 也可以使用[E18-2G4Z27SI](http://www.ebyte.com/en/product-view-news.aspx?id=522)替换pin2pin兼容的[E18-MS1PA1-IPX](http://www.ebyte.com/en/product-view-news.aspx?id=123)模组, 如何设置和实测信号发射功率请参考[此链接](https://github.com/smarthomefans/z2m_partner/blob/master/documents/signal.md).
 - 模块自带ESP8266模组. 可以通过WiFi转串口接入智能家居系统, 不再受到主机摆放位置的约束而导致信号覆盖差. 而且可以配合使用[Zigbee to Tasmota](https://github.com/arendst/Tasmota/wiki/Zigbee)项目, 完全不需要上位机, 自己本身就是一个zigbee-wifi网关.
-- ESP8266模组和E18模组的CC-DEBUG程序下载引脚连接, 可以通过(CCLib)[https://github.com/s-hadinger/CCLib]项目直接给E18 zigbee模组下载固件, 不需要另外购买CC-DEBUG在线仿真器.
+- ESP8266模组和E18模组的CC-DEBUG程序下载引脚连接, 可以通过[CCLib](https://github.com/s-hadinger/CCLib)项目, 直接给E18 zigbee模组下载固件, 不需要另外购买CC-DEBUG在线仿真器.
 - 可以通过拨码开关配置多种串口连接方式:
   - USB TTY <==> ESP 8266 TTY. 用于ESP模组和Zigbee模组下载固件.
   - USB TTY <==> E18 TTY. USB直连Zigbee模组, 上位机配置更加简单, 稳定性更强.
