@@ -40,6 +40,31 @@
 
 ![bottom view](https://raw.githubusercontent.com/smarthomefans/z2m_partner/master/images/bottom_view.png)
 
+## BOM单
+
+名称|封装|数值|数量|标号|参考报价(元)
+---|---|---|---|---|---
+贴片钽电容|TypeB|10uF|2|C5, C6|0.69
+贴片电容|0603|100nF|3|C3, C4, C7|0.04
+贴片LED灯|1206|LED|1|D1|0.30
+自恢复限流保险|1812|MF-MSMF050|1|F1|0.22
+贴片电阻|0603|5.1k|2|R1, R2|0.004
+贴片电阻|0603|10k|6|R3, R4, R7, R10-R12|0.016
+贴片电阻|0603|0|1|R8|0.003
+贴片电阻|0603|1k|1|R9|0.02
+拨码开关|SMT_P1.27mm|2位|1|SW1|2.87
+微动开关|SW_SPST_PTS810|SW_Push|2|SW2, SW3|1.21
+USB串口芯片|SOP16|CH340C|1|U1|2.85
+模拟开关芯片|SOP16|CD4052B|1|U2|1.56
+Zigbee模块|E18-MS1PA1-IPX|E18-MS1PA1-IPX|1|U3|27.69
+模拟开关芯片|SOT-353|74LVC1G66|2|U4, U5|0.58
+低压差线性稳压器|SOT-223-3|1117-33|1|U6|0.329
+WiFi模块|ESP-WROOM-02|ESP-WROOM-02|1|U7|13.20
+SMA转I-PEX|||1||2.80
+TypeC座|||1||0.91
+
+参考价格来自立创商城. 加上PCB成本, 总计成本约**61.236**元.
+
 ## 致谢
 
 - 各位大佬[modkam](https://modkam.ru/), [kirovilya](https://github.com/kirovilya), [Koenkk](https://github.com/Koenkk).
