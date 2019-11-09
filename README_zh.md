@@ -122,3 +122,7 @@ TypeC座|||1||0.91
 - 各位大佬[modkam](https://modkam.ru/), [kirovilya](https://github.com/kirovilya), [Koenkk](https://github.com/Koenkk).
 - 小F, 帮忙设计“碉堡”的外壳.
 - 萝卜哥, 花神以及热爱智能家居的每一位.
+
+如果您使用了本项目并且感觉不错, 请打赏一杯咖啡钱吧~
+![wechat](https://raw.githubusercontent.com/smarthomefans/z2m_partner/master/images/pay/wechat.png)
+![alipay](https://raw.githubusercontent.com/smarthomefans/z2m_partner/master/images/pay/alipay.png)
