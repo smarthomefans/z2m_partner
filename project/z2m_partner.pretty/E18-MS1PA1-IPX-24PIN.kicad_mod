@@ -1,0 +1,8 @@
+(module E18-MS1PA1-IPX-24PIN (layer F.Cu) (tedit 5DB575F0)
+  (fp_text reference REF** (at 0 0.5) (layer F.SilkS)
+    (effects (font (size 1 1) (thickness 0.15)))
+  )
+  (fp_text value E18-MS1PA1-IPX-24PIN (at 0 -0.5) (layer F.Fab)
+    (effects (font (size 1 1) (thickness 0.15)))
+  )
+)
