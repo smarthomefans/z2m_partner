@@ -1,11 +1,13 @@
-# zigbee2mqtt hardware module
+# [中文文档](https://github.com/smarthomefans/z2m_partner/blob/master/README_zh.md)
 
-This is hardware module for [iobroker.zigbee](https://github.com/ioBroker/ioBroker.zigbee) and [zigbee2mqtt](https://github.com/Koenkk/zigbee2mqtt)
-If you can speek Chinese and be intreasted with this project, please look at this [post](https://bbs.iobroker.cn/thread-361-1-1.html) in [ioBroker China BBS](https://bbs.iobroker.cn/)
+# z2m hardware module
 
-# **THIS IS ALPHA VERSION!!!**
+This is hardware module for [iobroker.zigbee](https://github.com/ioBroker/ioBroker.zigbee) and [zigbee2mqtt](https://github.com/Koenkk/zigbee2mqtt) or [Zigbee to Tasmota](https://github.com/arendst/Tasmota/wiki/Zigbee).  
+If you can speak Chinese and be interested with this project, please look at this [post](https://bbs.iobroker.cn/thread-361-1-1.html) in [ioBroker China BBS](https://bbs.iobroker.cn/)
 
-# What's the difference
+## **THIS IS ALPHA VERSION!!!**
+
+## What's the difference
 
 - Use [E18-MS1PA1-IPX](http://www.ebyte.com/en/product-view-news.aspx?id=123) zigbee module. 20dBm power can make sure zigbee net work signal is strong.
 - Add an ESP8266 module. Give you another option that can connect zigbee module though wifi-to-serial (I was using this [project](https://github.com/smarthomefans/ESP32-Serial-Bridge)). 
@@ -17,12 +19,20 @@ If your machine running smarthome platform, such as ioBroker or homeassistant, i
   - USB TTY <==> ESP 8266 debug port. ESP 8266 TTY <==> E18 TTY. Connect though wifi, and you can capture debug infomation though USB TTY.
   - ESP 8266 TTY <==> E18 TTY. Connect though TTY.
 
-# PCB preview
+## Hardware module images
 
-![top view](https://github.com/smarthomefans/z2m_partner/blob/master/images/top_view.png)
-![bottom view](https://github.com/smarthomefans/z2m_partner/blob/master/images/bottom_view.png)
+![top view](https://raw.githubusercontent.com/smarthomefans/z2m_partner/master/images/front_hw.png)
+![bottom view](https://raw.githubusercontent.com/smarthomefans/z2m_partner/master/images/back_hw.png)
 
-# Hardware module images
+## 3D cover
 
-![top view](https://github.com/smarthomefans/z2m_partner/blob/master/images/front_hw.png)
-![bottom view](https://github.com/smarthomefans/z2m_partner/blob/master/images/back_hw.png)
+![cave](https://raw.githubusercontent.com/smarthomefans/z2m_partner/master/images/3Dfinal.jpg)
+
+## PCB preview
+
+![top view](https://raw.githubusercontent.com/smarthomefans/z2m_partner/master/images/top_view.png)
+![bottom view](https://raw.githubusercontent.com/smarthomefans/z2m_partner/master/images/bottom_view.png)
+
+## Thanks to
+
+- [modkam](https://modkam.ru/), [kirovilya](https://github.com/kirovilya), [Koenkk](https://github.com/Koenkk).
