@@ -11,16 +11,16 @@
 
   (page A4)
   (layers
-    (0 F.Cu signal hide)
+    (0 F.Cu signal)
     (31 B.Cu signal)
-    (32 B.Adhes user hide)
-    (33 F.Adhes user hide)
-    (34 B.Paste user hide)
-    (35 F.Paste user hide)
+    (32 B.Adhes user)
+    (33 F.Adhes user)
+    (34 B.Paste user)
+    (35 F.Paste user)
     (36 B.SilkS user)
-    (37 F.SilkS user hide)
-    (38 B.Mask user hide)
-    (39 F.Mask user hide)
+    (37 F.SilkS user)
+    (38 B.Mask user)
+    (39 F.Mask user)
     (44 Edge.Cuts user)
     (45 Margin user)
     (46 B.CrtYd user hide)
@@ -1550,7 +1550,7 @@
     )
   )
 
-  (module LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm (layer B.Cu) (tedit 5AA4B285) (tstamp 5DCCA0FF)
+  (module LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm (layer B.Cu) (tedit 5AA4B285) (tstamp 5DD32F04)
     (at 184.55 102.87)
     (descr https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf)
     (tags "LED RGB NeoPixel")
@@ -1578,7 +1578,7 @@
     (fp_text user %R (at 0 0) (layer B.Fab)
       (effects (font (size 0.8 0.8) (thickness 0.15)) (justify mirror))
     )
-    (fp_text user 1 (at 0.65 1.43) (layer B.SilkS) hide
+    (fp_text user 1 (at -4.15 1.6) (layer B.SilkS) hide
       (effects (font (size 1 1) (thickness 0.15)) (justify mirror))
     )
     (pad 1 smd rect (at -2.45 1.6) (size 1.5 1) (layers B.Cu B.Paste B.Mask)
