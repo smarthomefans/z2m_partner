@@ -1,0 +1,1 @@
+{"hostname":"z2mp","ssid":"","password":"","tcpPort":8880,"mqttServer":"","mqttPort":1883,"mqttUser":"","mqttPass":"","mqttClientID":"z2mp","mqttPubTopic":"z2mp/result","mqttSubTopic":"z2mp/cmd"}
