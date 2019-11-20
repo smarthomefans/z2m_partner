@@ -90,7 +90,7 @@ void reconnect()
     }
     else
     {
-      LOGD("failed, rc=%d try again in 5 seconds.", client.state());
+      LOGD("failed, rc=%d try again in 5 seconds.", client->state());
       // Wait 5 seconds before retrying
       delay(5000);
     }
@@ -170,14 +170,14 @@ void setup()
   }
   else
   {
-    LOGD("SSID defined, connect to %s", ssid);
+    LOGD("SSID defined, connect to %s", config.ssid);
     WiFi.mode(WIFI_STA);
     WiFi.begin(config.ssid, config.password);
   }
   while (WiFi.status() != WL_CONNECTED)
   {
     delay(500);
-    LOGD("Connecting to %s", ssid);
+    LOGD("Connecting to %s", config.ssid);
   }
   LOGD(WiFi.localIP().toString().c_str());
 
