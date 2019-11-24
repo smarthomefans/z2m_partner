@@ -129,7 +129,7 @@ if (doc[#name]) \
   config.name = doc[#name]
 
   StaticJsonDocument<512> doc;
-  if (SPIFFS.begin()) {
+  if (!SPIFFS.begin()) {
     LOGD("mount spiffs failed.");
     return;
   }
