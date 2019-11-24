@@ -44,7 +44,19 @@ struct Config {
   char mqttSubTopic[32];
 };
 
-struct Config config;
+struct Config config = {
+  "z2mp",
+  "",
+  "",
+  8880,
+  "",
+  1883,
+  "",
+  "",
+  "z2mp",
+  "z2mp/result",
+  "z2mp/cmd",
+};
 
 HardwareSerial *COM = &Serial;
 
@@ -110,9 +122,11 @@ static inline void reset_zigbee()
 static void getConfigFromFile() {
 
 #define READ_STR_CONFIG_FROM_JSON(name) \
-strlcpy(config.name, doc[#name] | "", sizeof(config.name))
+if (strlen(doc[#name])) \
+  strlcpy(config.name, doc[#name], sizeof(config.name))
 #define READ_INT_CONFIG_FROM_JSON(name) \
-config.name = doc[#name] | 0
+if (doc[#name]) \
+  config.name = doc[#name]
 
   StaticJsonDocument<512> doc;
   if (SPIFFS.begin()) {
@@ -156,7 +170,7 @@ void setup()
 #if (DEBUG)
   DBGCOM->begin(115200);
 #endif
-  LOGD("\n\n WiFi Serial Bridge V2.00");
+  LOGD("\n\n WiFi Serial Bridge %d.%d.%d", VERSION_M, VERSION_N, VERSION_P);
 
   getConfigFromFile();
 
@@ -182,7 +196,7 @@ void setup()
     delay(500);
     LOGD("Connecting to %s", config.ssid);
   }
-  LOGD(WiFi.localIP().toString().c_str());
+  LOGD("TCP server: %s:%d", WiFi.localIP().toString().c_str(), config.tcpPort);
 
 #ifdef PROTOCOL_TCP
   static WiFiServer server_0(config.tcpPort);
