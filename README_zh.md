@@ -20,7 +20,7 @@
 - 可以通过拨码开关配置多种串口连接方式:
   - USB TTY <==> ESP 8266 TTY. 用于ESP模组和Zigbee模组下载固件.
   - USB TTY <==> E18 TTY. USB直连Zigbee模组, 上位机配置更加简单, 稳定性更强.
-  - ESP 8266 TTY <==> E18 TTY. Connect though TTY. ESP模组和Zigbee模组对接, 可以刷WiFi串口固件, 实现WiFi接入上位机智能家居系统, 具体方法参考[此链接](https://github.com/smarthomefans/z2m_partner/blob/master/documents/wifi_serial.md). 或者直接配合[Zigbee to Tasmota](https://github.com/arendst/Tasmota/wiki/Zigbee)项目做独立的Zigbee网关.
+  - ESP 8266 TTY <==> E18 TTY. Connect though TTY. ESP模组和Zigbee模组对接, 可以刷WiFi串口固件, 实现WiFi接入上位机智能家居系统, 具体方法参考[此链接](#%e5%88%b7%e6%9c%ba%e6%95%99%e7%a8%8b). 或者直接配合[Zigbee to Tasmota](https://github.com/arendst/Tasmota/wiki/Zigbee)项目做独立的Zigbee网关.
   - USB TTY <==> ESP 8266 debug port. ESP 8266 TTY <==> E18 TTY. 和上一种连接方式一样, 多增加了一个debug串口.
 - 使用USB **Type-C**接口. 紧跟时代潮流.
 - 不管你怎么看, 我认为这个比USB dongle要好看几个数量级. 颜值即正义.
@@ -44,78 +44,69 @@
 
 ### 做WiFi/USB有线接入的Zigbee网关
 
-名称|封装|数值|数量|标号|参考报价(元)
+名称|封装|数值|数量|标号|立创商城货号
 ---|---|---|---|---|---
-贴片钽电容|TypeB|10uF|2|C5, C6|0.69
-贴片电容|0603|100nF|3|C3, C4, C7|0.04
-贴片LED灯|1206|LED|1|D1|0.30
-自恢复限流保险|1812|MF-MSMF050|1|F1|0.22
-贴片电阻|0603|5.1k|2|R1, R2|0.004
-贴片电阻|0603|10k|6|R3, R4, R7, R10-R12|0.016
-贴片电阻|0603|0|1|R8|0.003
-贴片电阻|0603|1k|1|R9|0.02
-拨码开关|SMT_P1.27mm|2位|1|SW1|2.87
-微动开关|SW_SPST_PTS810|SW_Push|2|SW2, SW3|1.21
-USB串口芯片|SOP16|CH340C|1|U1|2.85
-模拟开关芯片|SOP16|CD4052B|1|U2|1.56
-Zigbee模块|E18-MS1PA1-IPX|E18-MS1PA1-IPX|1|U3|27.69
-模拟开关芯片|SOT-353|74LVC1G66|2|U4, U5|0.58
-低压差线性稳压器|SOT-223-3|1117-33|1|U6|0.329
-WiFi模块|ESP-WROOM-02|ESP-WROOM-02|1|U7|13.20
-SMA转I-PEX|||1||2.80
-TypeC座|||1||0.91
+贴片钽电容|TypeB|10uF|2|C5, C6|[C128257](https://item.szlcsc.com/139542.html)
+贴片电容|0603|100nF|3|C3, C4, C7|[C149620](https://item.szlcsc.com/160954.html)
+贴片LED灯|1206|LED|1|D1|[C99881](https://item.szlcsc.com/101095.html)
+自恢复限流保险|1812|MF-MSMF050|1|F1|[C17313](https://item.szlcsc.com/17998.html)
+贴片电阻|0603|5.1k|2|R1, R2|[C26000](https://item.szlcsc.com/26743.html)
+贴片电阻|0603|10k|6|R3, R4, R7, R10-R12|[C15401](https://item.szlcsc.com/16079.html)
+贴片电阻|0603|0|1|R8|[C384298](https://item.szlcsc.com/357579.html)
+贴片电阻|0603|1k|1|R9|[C21190](https://item.szlcsc.com/21904.html)
+拨码开关|SMT_P1.27mm|2位|1|SW1|[C40735](https://item.szlcsc.com/41719.html)
+微动开关|SW_SPST_PTS810|SW_Push|2|SW2, SW3|[C221896](https://item.szlcsc.com/222326.html)
+USB串口芯片|SOP16|CH340C|1|U1|[C84681](https://item.szlcsc.com/85852.html)
+模拟开关芯片|SOP16|CD4052B|1|U2|[C6521](https://item.szlcsc.com/6986.html)
+Zigbee模块|E18-MS1PA1-IPX|E18-MS1PA1-IPX|1|U3|[C108551](https://item.szlcsc.com/109770.html)
+模拟开关芯片|SOT-353|74LVC1G66|2|U4, U5|[C113518](https://list.szlcsc.com/catalog/488.html)
+低压差线性稳压器|SOT-223-3|1117-33|1|U6|[C369933](https://list.szlcsc.com/catalog/387.html)
+WiFi模块|ESP-WROOM-02|ESP-WROOM-02|1|U7|[C81770](https://item.szlcsc.com/82923.html)
+SMA转I-PEX|||1||[C403729](https://item.szlcsc.com/389816.html)
+TypeC座|||1||[C165948](https://item.szlcsc.com/177331.html)
 
 参考价格来自立创商城. 加上PCB成本, 总计成本约**61.236**元.
 
-### 只做USB接入的Zigbee网关
+## 刷机教程
 
-名称|封装|数值|数量|标号|参考报价(元)
----|---|---|---|---|---
-贴片钽电容|TypeB|10uF|2|C5, C6|0.69
-贴片电容|0603|100nF|2|C3, C7|0.04
-贴片LED灯|1206|LED|1|D1|0.30
-自恢复限流保险|1812|MF-MSMF050|1|F1|0.22
-贴片电阻|0603|5.1k|2|R1, R2|0.004
-贴片电阻|0603|10k|3|R3, R4, R7|0.016
-贴片电阻|0603|0|1|R6|0.003
-贴片电阻|0603|1k|1|R9|0.02
-拨码开关|SMT_P1.27mm|2位|1|SW1|2.87
-微动开关|SW_SPST_PTS810|SW_Push|1|SW2|1.21
-USB串口芯片|SOP16|CH340C|1|U1|2.85
-模拟开关芯片|SOP16|CD4052B|1|U2|1.56
-Zigbee模块|E18-MS1PA1-IPX|E18-MS1PA1-IPX|1|U3|27.69
-低压差线性稳压器|SOT-223-3|1117-33|1|U6|0.329
-SMA转I-PEX|||1||2.80
-TypeC座|||1||0.91
+### 准备材料
 
-参考价格来自立创商城. 加上PCB成本, 总计成本约**45.578**元.
+- windows电脑一台
+- usb typeC数据线一条(数据线, 别弄一个充电线过来)
+- z2m网关硬件V01版本一个, 将USB串口配置到ESP模块上. 请[参考](https://github.com/smarthomefans/z2m_partner/blob/master/documents/tty.md).
+- 刷机所需要的[固件](https://github.com/smarthomefans/z2m_partner/archive/master.zip). [源码](https://github.com/smarthomefans/z2m_partner/tree/master/firmware/esp)也在本项目中.
+- 专门为此项目开发的[刷机工具](https://github.com/smarthomefans/esphome-flasher/releases/download/0.1.0/ESPHome-Flasher.exe)
+- 空闲的**30**分钟(不夸张, 真的很久)
 
-### 只做Zigbee router
+### 刷机过程
 
-名称|封装|数值|数量|标号|参考报价(元)
----|---|---|---|---|---
-贴片钽电容|TypeB|10uF|2|C5, C6|0.69
-贴片电容|0603|100nF|1|C7|0.04
-贴片LED灯|1206|LED|1|D1|0.30
-自恢复限流保险|1812|MF-MSMF050|1|F1|0.22
-贴片电阻|0603|5.1k|2|R1, R2|0.004
-贴片电阻|0603|10k|1|R7|0.016
-贴片电阻|0603|0|1|R6|0.003
-贴片电阻|0603|1k|1|R9|0.02
-微动开关|SW_SPST_PTS810|SW_Push|1|SW2|1.21
-Zigbee模块|E18-MS1PA1-IPX|E18-MS1PA1-IPX|1|U3|27.69
-低压差线性稳压器|SOT-223-3|1117-33|1|U6|0.329
-SMA转I-PEX|||1||2.80
-TypeC座|||1||0.91
+1. 打开刷机工具, 选择固件, 配置个人的wifi, 设备hostname以及tcp串口的串口号. (MQTT相关的信息还没有测试).
+![set_info](images/flash/info.png)
+1. **按住设备的flash按钮, 同时点一下reset按钮**. 让ESP模块进入刷机模式.
+1. 点击刷机工具的**All**图标.
+1. 此阶段正在给ESP模块刷cclib固件, 为下一阶段给zigbee模块刷机做准备(用时大约30秒).
+1. 注意console界面, 出现`Please press reset button`的5秒倒计时时, 要按一下模块的reset按钮.
+1. 接下来程序将给zigbee刷固件, 耗时**20**分钟!!!!(该喝茶, 该买咖啡买咖啡, 注意到点回来就行)
+1. 刷完zigbee固件后, 需要再次让ESP模块进入刷机模式, **按住设备的flash按钮, 同时点一下reset按钮**. 刷ESP wifi串口固件(用时约30秒).
+1. 刷完后还需要让ESP模块进入刷机模式, **按住设备的flash按钮, 同时点一下reset按钮**. 刷WiFi等配置信息(用时5秒).
 
-参考价格来自立创商城. 加上PCB成本, 总计成本约**38.226**元.
+### 注意事项
+
+- 因为V01版本的ESP刷机模式做的不是很好, 还需要在特定时间手动按按钮, 所以一定要熟悉整个流程, 在关键时刻出手. 如果刷机失败, 拔掉USB线, 从头来过. (V02版本硬件应该会做到自动化).
+- Zigbee刷机真的要很长时间, 也可以用TI的SBL工具刷机.
+- 用刷机工具刷机, Zigbee固件要选择**hex**后缀的固件. 使用TI SBL工具刷机才使用**bin**后缀的固件.
+- Zigbee固件CC2530ZNP-SB.hex是SBL的bootloader. normal_21db文件夹下面是normal模式的固件(推荐就用这个吧, 小米设备支持更好). source_routing_21db文件夹下面是支持source_routing的固件(这个功能小米的设备支持不好, 总有很多错误log).
+
+### 刷机视频
+
+可以从[这里]()看一下刷机视频, 熟悉一下操作流程.
 
 ## 改版计划
 
-1. USB串口芯片自动控制ESP flash和reset引脚, 无需再按键.
-2. LED灯交给ESP芯片控制, 可调节开关和显示效果.
-3. 优化拨码开关的丝印提示.
-4. 可能更新CC2538模组(30%可能性吧).
+- [x] USB串口芯片自动控制ESP flash和reset引脚, 无需再按键.
+- [x] LED灯交给ESP芯片控制, 可调节开关和显示效果.
+- [x] 优化拨码开关的丝印提示.
+- 可能更新CC2538模组(30%可能性吧).
 
 ## 致谢
 
