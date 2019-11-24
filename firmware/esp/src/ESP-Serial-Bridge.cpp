@@ -115,7 +115,10 @@ strlcpy(config.name, doc[#name] | "", sizeof(config.name))
 config.name = doc[#name] | 0
 
   StaticJsonDocument<512> doc;
-  SPIFFS.begin();
+  if (SPIFFS.begin()) {
+    LOGD("mount spiffs failed.");
+    return;
+  }
   File f = SPIFFS.open("/config.json", "r");
   if (!f) {
     LOGD("Config file not exist.");
