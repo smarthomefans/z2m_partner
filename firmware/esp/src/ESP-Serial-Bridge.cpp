@@ -174,6 +174,11 @@ void setup()
 
   getConfigFromFile();
 
+  pinMode(TTY_SEL0_PIN, OUTPUT);
+  digitalWrite(TTY_SEL0_PIN, LOW);
+  pinMode(TTY_SEL1_PIN, OUTPUT);
+  digitalWrite(TTY_SEL1_PIN, HIGH);
+
   if (strlen(config.ssid) == 0)
   {
     LOGD("No SSID defined, use wifi manager.");

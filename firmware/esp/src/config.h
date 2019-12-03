@@ -11,6 +11,8 @@ unsigned char qos = 1; //subscribe qos
 bool retained = false;
 
 #define ZGB_RST_PIN     12
+#define TTY_SEL0_PIN    16
+#define TTY_SEL1_PIN    5
 /*************************  COM Port 0 *******************************/
 #define UART_BAUD0 115200        // Baudrate UART0
 #ifdef ESP8266
