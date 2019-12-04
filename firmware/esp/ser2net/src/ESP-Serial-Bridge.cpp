@@ -161,6 +161,10 @@ if (doc[#name]) \
 
 void setup()
 {
+  pinMode(TTY_SEL0_PIN, OUTPUT);
+  digitalWrite(TTY_SEL0_PIN, LOW);
+  pinMode(TTY_SEL1_PIN, OUTPUT);
+  digitalWrite(TTY_SEL1_PIN, HIGH);
   delay(500);
 #ifdef ESP8266
   COM->begin(UART_BAUD0, SERIAL_PARAM0);
@@ -173,11 +177,6 @@ void setup()
   LOGD("\n\n WiFi Serial Bridge %d.%d.%d", VERSION_M, VERSION_N, VERSION_P);
 
   getConfigFromFile();
-
-  pinMode(TTY_SEL0_PIN, OUTPUT);
-  digitalWrite(TTY_SEL0_PIN, LOW);
-  pinMode(TTY_SEL1_PIN, OUTPUT);
-  digitalWrite(TTY_SEL1_PIN, HIGH);
 
   if (strlen(config.ssid) == 0)
   {
