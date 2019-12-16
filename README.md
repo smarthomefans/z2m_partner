@@ -27,7 +27,7 @@ If your machine running smarthome platform, such as ioBroker or homeassistant, i
 
 ![cave](images/3Dfinal.jpg)
 
-## [SCH](https://raw.githubusercontent.com/smarthomefans/z2m_partner/master/project/z2m_partner.pdf) preview
+## [SCH](https://github.com/smarthomefans/z2m_partner/raw/master/project/z2m_partner.pdf) preview
 ![sch view](images/sch_v2p1.png)
 
 ## PCB preview
