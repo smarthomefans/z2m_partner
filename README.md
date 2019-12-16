@@ -35,6 +35,9 @@ If your machine running smarthome platform, such as ioBroker or homeassistant, i
 ![top view](images/top_view.png)
 ![bottom view](images/bottom_view.png)
 
+## BOM list
+[BOM](https://github.com/smarthomefans/z2m_partner/blob/master/documents/bom.md) can get from here.
+
 ## Thanks to
 
 - [modkam](https://modkam.ru/), [kirovilya](https://github.com/kirovilya), [Koenkk](https://github.com/Koenkk).
