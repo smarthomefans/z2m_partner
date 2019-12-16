@@ -1,16 +1,16 @@
-# [中文文档](https://github.com/smarthomefans/z2m_partner/blob/master/README_zh.md)
+# [中文文档](https://bbs.iobroker.cn/t/topic/882/33)
 
 # z2m hardware module
 
 This is hardware module for [iobroker.zigbee](https://github.com/ioBroker/ioBroker.zigbee) and [zigbee2mqtt](https://github.com/Koenkk/zigbee2mqtt) or [Zigbee to Tasmota](https://github.com/arendst/Tasmota/wiki/Zigbee).  
-If you can speak Chinese and be interested with this project, please look at this [post](https://bbs.iobroker.cn/thread-361-1-1.html) in [ioBroker China BBS](https://bbs.iobroker.cn/)
+If you can speak Chinese and be interested with this project, please look at this [post](https://bbs.iobroker.cn/t/topic/882/33) in [ioBroker China BBS](https://bbs.iobroker.cn/)
 
-## **THIS IS ALPHA VERSION!!!**
+## **V2P1 version is ready to ship**
 
 ## What's the difference
 
 - Use [E18-MS1PA1-IPX](http://www.ebyte.com/en/product-view-news.aspx?id=123) zigbee module. 20dBm power can make sure zigbee net work signal is strong.
-- Add an ESP8266 module. Give you another option that can connect zigbee module though wifi-to-serial (I was using this [project](https://github.com/smarthomefans/ESP32-Serial-Bridge)). 
+- Add an ESP8266 module. Give you another option that can connect zigbee module though wifi-to-serial (I was using this [project](https://github.com/smarthomefans/ESP32-Serial-Bridge)).
 If your machine running smarthome platform, such as ioBroker or homeassistant, is put in a hidden corner, for better signal coverage, you can put your zigbee module in some where else.
 - ESP8266 connected to E18 firmware download pins, give you a chance that can update E18 though ESP8266, no need to use CC-DEBUG.
 - There will be 4 options for different TTY connection:
@@ -21,17 +21,19 @@ If your machine running smarthome platform, such as ioBroker or homeassistant, i
 
 ## Hardware module images
 
-![top view](https://raw.githubusercontent.com/smarthomefans/z2m_partner/master/images/front_hw.png)
-![bottom view](https://raw.githubusercontent.com/smarthomefans/z2m_partner/master/images/back_hw.png)
+![top view](images/front_hw.jpeg)
 
 ## 3D cover
 
-![cave](https://raw.githubusercontent.com/smarthomefans/z2m_partner/master/images/3Dfinal.jpg)
+![cave](images/3Dfinal.jpg)
+
+## [SCH](https://raw.githubusercontent.com/smarthomefans/z2m_partner/master/project/z2m_partner.pdf) preview
+![sch view](images/sch_v2p1.png)
 
 ## PCB preview
 
-![top view](https://raw.githubusercontent.com/smarthomefans/z2m_partner/master/images/top_view.png)
-![bottom view](https://raw.githubusercontent.com/smarthomefans/z2m_partner/master/images/bottom_view.png)
+![top view](images/top_view.png)
+![bottom view](images/bottom_view.png)
 
 ## Thanks to
 
