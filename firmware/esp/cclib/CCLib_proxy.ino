@@ -66,7 +66,7 @@ void setup() {
 
   // Set USB tty to ESP
   pinMode(SEL_0, OUTPUT);
-  pinMode(SEL_0, OUTPUT);
+  pinMode(SEL_1, OUTPUT);
   digitalWrite(SEL_0, HIGH);
   digitalWrite(SEL_1, LOW);
 
