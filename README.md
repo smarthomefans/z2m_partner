@@ -1,4 +1,4 @@
-# [中文文档](https://bbs.iobroker.cn/t/topic/882/33)
+# [中文文档](https://bbs.iobroker.cn/t/topic/882)
 
 # z2m hardware module
 
