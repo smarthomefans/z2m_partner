@@ -20,5 +20,7 @@ Zigbee模块|E18-MS1PA1-IPX|E18-MS1PA1-IPX|1|U3|[C108551](https://item.szlcsc.co
 WiFi模块|ESP-WROOM-02|ESP-WROOM-02|1|U7|[C81770](https://item.szlcsc.com/82923.html)
 SMA转I-PEX|||1||[C403729](https://item.szlcsc.com/389816.html)
 TypeC座|||1||[C165948](https://item.szlcsc.com/177331.html)
+三极管|SOT-23|S8050|2|Q1,Q2|[C181158](https://item.szlcsc.com/192555.html)
+胶棒天线||2.4G|1||[C381198](https://item.szlcsc.com/353456.html)
 
-参考价格来自立创商城. 加上PCB成本, 总计成本约**61.236**元.
+参考价格来自立创商城. 加上PCB成本, 总计成本约**68.236**元.
