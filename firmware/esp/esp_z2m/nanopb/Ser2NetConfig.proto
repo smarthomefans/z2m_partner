@@ -1,0 +1,8 @@
+
+syntax = "proto3";
+
+import "nanopb.proto";
+
+message Ser2NetConfigMessage {
+	uint32 tcp_port = 1 [(nanopb).int_size = IS_16];
+}
