@@ -2,10 +2,13 @@
 #include <TaskScheduler.h>
 
 #include "Framework.h"
-#include "Module.h"
+#include "Config.h"
+#include "Debug.h"
 #include "Rtc.h"
 #include "Http.h"
 #include "Util.h"
+#include "Wifi.h"
+#include "Led.h"
 
 static Scheduler normal_runner;
 
@@ -31,10 +34,6 @@ void Framework::callback(char *topic, byte *payload, unsigned int length)
     {
         ESP.reset();
     }
-    else if (module)
-    {
-        module->mqttCallback(topicStr, str);
-    }
 
     Led::led(200);
 }
@@ -43,10 +42,6 @@ void Framework::connectedCallback()
 {
     Mqtt::subscribe(Mqtt::getCmndTopic(F("#")));
     Led::blinkLED(40, 8);
-    if (module)
-    {
-        module->mqttConnected();
-    }
 }
 #endif
 
@@ -68,7 +63,6 @@ static void tickerPerSecondDo()
 #ifndef DISABLE_MQTT
     Mqtt::perSecondDo();
 #endif
-    module->perSecondDo();
     LOGD("per second %d", perSecond);
 }
 
@@ -92,24 +86,20 @@ Task taskLedLoop(100, TASK_FOREVER, Led::loop, &normal_runner, false);
 Task taskMqttLoop(100, TASK_FOREVER, Mqtt::loop, &normal_runner, false);
 #endif
 Task taskRTCLoop(1000, TASK_FOREVER, Rtc::loop, &normal_runner, false);
-static void moduleLoop(void) { module->loop(); }
-Task taskModuleLoop(100, TASK_FOREVER, moduleLoop, &normal_runner, false);
 
 void Framework::setup()
 {
-    Debug::AddError(PSTR("---------------------  v%s  %s  -------------------"), module->getModuleVersion().c_str(), Rtc::GetBuildDateAndTime().c_str());
+    Debug::AddError(PSTR("--------------------- Build time %s  -------------------"), Rtc::GetBuildDateAndTime().c_str());
     LOGD("rebootCound %d", rebootCount);
     if (rebootCount == 1)
     {
         // Reset configs
         Config::readConfig();
-        module->resetConfig();
     }
     else if (rebootCount == 2)
     {
         // Reset configs
         Config::readConfig();
-        module->resetConfig();
     }
     else
     {
@@ -129,7 +119,7 @@ void Framework::setup()
         String mac = WiFi.macAddress();
         mac.replace(":", "");
         mac = mac.substring(6, 12);
-        sprintf(UID, "%s_%s", module->getModuleName().c_str(), mac.c_str());
+        sprintf(UID, "%s_%s", "name", mac.c_str());
     }
     Util::strlowr(UID);
 
@@ -146,18 +136,12 @@ void Framework::setup()
     Http::begin();
     Wifi::connectWifi();
     LOGD("%s", "connect wifi down");
-    if (rebootCount == 3)
-    {
-        module = NULL;
-    }
-    else
     {
 #ifndef DISABLE_MQTT
         Mqtt::setClient(Wifi::wifiClient);
         Mqtt::mqttSetConnectedCallback(connectedCallback);
         Mqtt::mqttSetLoopCallback(callback);
 #endif
-        //module->init();
         Rtc::init();
     }
 
@@ -167,7 +151,6 @@ void Framework::setup()
 #ifndef DISABLE_MQTT
         taskMqttLoop.enableIfNot();
 #endif
-        taskModuleLoop.enableIfNot();
         taskRTCLoop.enableIfNot();
     LOGD("%s", "setup down");
 }
