@@ -1,11 +1,16 @@
 #include <EEPROM.h>
+#include <TaskScheduler.h>
+
 #include "Framework.h"
 #include "Module.h"
 #include "Rtc.h"
 #include "Http.h"
 #include "Util.h"
 
-uint16_t Framework::rebootCount = 0;
+static Scheduler normal_runner;
+
+uint16_t rebootCount = 0;
+
 #ifndef DISABLE_MQTT
 void Framework::callback(char *topic, byte *payload, unsigned int length)
 {
@@ -45,7 +50,7 @@ void Framework::connectedCallback()
 }
 #endif
 
-void Framework::tickerPerSecondDo()
+static void tickerPerSecondDo()
 {
     perSecond++;
     if (perSecond == 30)
@@ -64,6 +69,7 @@ void Framework::tickerPerSecondDo()
     Mqtt::perSecondDo();
 #endif
     module->perSecondDo();
+    LOGD("per second %d", perSecond);
 }
 
 void Framework::one(unsigned long baud)
@@ -78,16 +84,30 @@ void Framework::one(unsigned long baud)
     globalConfig.debug.type = 1;
 }
 
+Task taskPerSecond(1000, TASK_FOREVER, tickerPerSecondDo, &normal_runner, false);
+Task taskWiFiLoop(200, TASK_FOREVER, Wifi::loop, &normal_runner, false);
+Task taskHttpLoop(100, TASK_FOREVER, Http::loop, &normal_runner, false);
+Task taskLedLoop(100, TASK_FOREVER, Led::loop, &normal_runner, false);
+#ifndef DISABLE_MQTT
+Task taskMqttLoop(100, TASK_FOREVER, Mqtt::loop, &normal_runner, false);
+#endif
+Task taskRTCLoop(1000, TASK_FOREVER, Rtc::loop, &normal_runner, false);
+static void moduleLoop(void) { module->loop(); }
+Task taskModuleLoop(100, TASK_FOREVER, moduleLoop, &normal_runner, false);
+
 void Framework::setup()
 {
     Debug::AddError(PSTR("---------------------  v%s  %s  -------------------"), module->getModuleVersion().c_str(), Rtc::GetBuildDateAndTime().c_str());
+    LOGD("rebootCound %d", rebootCount);
     if (rebootCount == 1)
     {
+        // Reset configs
         Config::readConfig();
         module->resetConfig();
     }
     else if (rebootCount == 2)
     {
+        // Reset configs
         Config::readConfig();
         module->resetConfig();
     }
@@ -95,6 +115,11 @@ void Framework::setup()
     {
         Config::readConfig();
     }
+
+#ifdef FORCE_SERIAL_LOG
+    globalConfig.debug.type |= 1;
+#endif
+
     if (globalConfig.uid[0] != '\0')
     {
         strcpy(UID, globalConfig.uid);
@@ -109,7 +134,7 @@ void Framework::setup()
     Util::strlowr(UID);
 
     Debug::AddInfo(PSTR("UID: %s"), UID);
-    // Debug::AddInfo(PSTR("Config Len: %d"), GlobalConfigMessage_size + 6);
+    Debug::AddInfo(PSTR("Config Len: %d"), GlobalConfigMessage_size + 6);
 
     //Config::resetConfig();
     if (MQTT_MAX_PACKET_SIZE == 128)
@@ -117,15 +142,13 @@ void Framework::setup()
         Debug::AddError(PSTR("WRONG PUBSUBCLIENT LIBRARY USED PLEASE INSTALL THE ONE FROM OMG LIB FOLDER"));
     }
 
+    taskPerSecond.enable();
+    Http::begin();
+    Wifi::connectWifi();
+    LOGD("%s", "connect wifi down");
     if (rebootCount == 3)
     {
         module = NULL;
-
-        tickerPerSecond = new Ticker();
-        tickerPerSecond->attach(1, tickerPerSecondDo);
-
-        Http::begin();
-        Wifi::connectWifi();
     }
     else
     {
@@ -134,37 +157,24 @@ void Framework::setup()
         Mqtt::mqttSetConnectedCallback(connectedCallback);
         Mqtt::mqttSetLoopCallback(callback);
 #endif
-        module->init();
-        tickerPerSecond = new Ticker();
-        tickerPerSecond->attach(1, tickerPerSecondDo);
-        Http::begin();
-        Wifi::connectWifi();
+        //module->init();
         Rtc::init();
     }
+
+        taskWiFiLoop.enableIfNot();
+        taskHttpLoop.enableIfNot();
+        taskLedLoop.enableIfNot();
+#ifndef DISABLE_MQTT
+        taskMqttLoop.enableIfNot();
+#endif
+        taskModuleLoop.enableIfNot();
+        taskRTCLoop.enableIfNot();
+    LOGD("%s", "setup down");
 }
 
 void Framework::loop()
 {
-    if (rebootCount == 3)
-    {
-        Wifi::loop();
-        Http::loop();
-    }
-    else
-    {
-        yield();
-        Led::loop();
-#ifndef DISABLE_MQTT
-        yield();
-        Mqtt::loop();
-#endif
-        yield();
-        module->loop();
-        yield();
-        Wifi::loop();
-        yield();
-        Http::loop();
-        yield();
-        Rtc::loop();
-    }
+    normal_runner.execute();
+    
+    LOGD("%s", "loop debug");
 }

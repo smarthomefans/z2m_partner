@@ -3,6 +3,7 @@
 #include <flash_hal.h>
 #include <FS.h>
 #include "StreamString.h"
+#include <ESP8266HTTPClient.h>
 #include <ESP8266httpUpdate.h>
 #include "Http.h"
 #include "Module.h"

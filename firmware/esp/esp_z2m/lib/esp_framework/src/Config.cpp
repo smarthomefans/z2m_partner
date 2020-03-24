@@ -120,7 +120,9 @@ void Config::readConfig()
         {
             module->readConfig();
         }
-        Debug::AddInfo(PSTR("readConfig       . . . OK Len: %d"), len);
+        Debug::AddDebug(PSTR("readConfig       . . . OK Len: %d"), len);
+        Debug::AddError(PSTR("readConfig       . . . OK Len: %d"), len);
+        Debug::AddInfo(("readConfig       . . . OK Len: %d"), len);
     }
 }
 

@@ -36,4 +36,8 @@ public:
     static void AddError(PGM_P formatP, ...);
 };
 
+#define LOGD(fmt, ...) Debug::AddDebug(fmt, __VA_ARGS__)
+#define LOGI(fmt, ...) Debug::AddInfo(fmt, __VA_ARGS__)
+#define LOGE(fmt, ...) Debug::AddError(fmt, __VA_ARGS__)
+
 #endif

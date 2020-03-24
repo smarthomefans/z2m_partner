@@ -8,16 +8,15 @@
 #include "Framework.h"
 #include "Ser2Net.h"
 
+Framework espfw;
+
 void setup()
 {
-    Framework::one(115200);
-
     module = new Ser2Net();
-
-    Framework::setup();
+    espfw.setup();
 }
 
 void loop()
 {
-    Framework::loop();
+    espfw.loop();
 }
