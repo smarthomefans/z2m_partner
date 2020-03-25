@@ -3,9 +3,7 @@
 #ifndef _HTTP_h
 #define _HTTP_h
 
-#include "Arduino.h"
-#include <ESP8266WebServer.h>
-#include <DNSServer.h>
+#include <ESPAsyncWebServer.h>
 
 class Http
 {
@@ -32,7 +30,7 @@ private:
     static String updaterError;
 
 public:
-    static ESP8266WebServer *server;
+    static AsyncWebServer *server;
     static void begin();
     static void stop();
     static void loop();

@@ -1,15 +1,25 @@
-#include <ESP8266mDNS.h>
-#include <ESP8266WebServer.h>
 #include <flash_hal.h>
 #include <FS.h>
 #include "StreamString.h"
-#include <ESP8266HTTPClient.h>
-#include <ESP8266httpUpdate.h>
 #include "Http.h"
 #include "Module.h"
 #include "Rtc.h"
 
-ESP8266WebServer *Http::server;
+#ifdef ESP32
+#include <FS.h>
+#include <SPIFFS.h>
+#include <ESPmDNS.h>
+#include <WiFi.h>
+#include <AsyncTCP.h>
+#elif defined(ESP8266)
+#include <ESP8266WiFi.h>
+#include <ESPAsyncTCP.h>
+#include <ESP8266mDNS.h>
+#endif
+#include <ESPAsyncWebServer.h>
+#include <SPIFFSEditor.h>
+
+AsyncWebServer *Http::server;
 bool Http::isBegin = false;
 String Http::updaterError;
 
