@@ -1,0 +1,3 @@
+[submodule "firmware/esp/Tasmota"]
+	path = firmware/esp/Tasmota
+	url = https://github.com/SchumyHao/Tasmota
