@@ -9,7 +9,7 @@
 ## 声明
 
 - **此项目还处于早期版本**.
-- EDA使用[kicad](http://www.kicad-pcb.org/)开发, 不存在软件版权问题.
+- EDA使用[kicad](http://www.kicad.org/)开发, 不存在软件版权问题.
 - DIY硬件有风险, 请大家注意用电安全. 如有风险, 后果自负.
 
 ## 项目特点
